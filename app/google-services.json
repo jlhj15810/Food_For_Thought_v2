@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "852812437395",
+    "firebase_url": "https://foodforthought-v2.firebaseio.com",
+    "project_id": "foodforthought-v2",
+    "storage_bucket": "foodforthought-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852812437395:android:1bc0fac6b5e01dcc",
+        "android_client_info": {
+          "package_name": "com.example.foodforthought_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852812437395-fvlahenenegjnubnfub15k7irh6kajon.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.foodforthought_v2",
+            "certificate_hash": "0d72ea1e3b9ff62f13ba3078f0360437a23c4f83"
+          }
+        },
+        {
+          "client_id": "852812437395-s8gpfiijkuqt4u75sol40n6jna4t3kln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj5JmA7fvUmCVUH3NpH0M1aCHwYibiLnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852812437395-s8gpfiijkuqt4u75sol40n6jna4t3kln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

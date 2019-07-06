@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        tools:showIn="navigation_view"
+>
+    <item
+            android:title="Filter"
+    >
+        <menu>
+            <!--<item-->
+                    <!--android:title="Checkable menu item (checked)"-->
+                    <!--android:checkable="true"-->
+                    <!--android:checked="true"-->
+            <!--/>-->
+
+
+            <!--<item-->
+                <!--android:title="Search for food"-->
+                <!--app:actionLayout = "@layout/widget_search"-->
+                <!--android:id="@+id/searchView"/>-->
+
+            <item
+                    android:title="Type Of Food"
+            />
+
+            <item
+                    android:title="Halal"
+                    app:actionLayout="@layout/widget_check"
+                    android:id="@+id/filter_menu_halal"
+                    android:tooltipText="Halal"
+            />
+
+            <item
+                    android:title="Vegetarian"
+                    app:actionLayout="@layout/widget_check"
+                    android:id="@+id/filter_menu_vegetarian"
+            />
+
+            <item
+                    android:title="No Beef"
+                    app:actionLayout="@layout/widget_check"
+                    android:id="@+id/filter_menu_no_beef"
+            />
+
+            <item
+                android:title="Price Range"/>
+
+            <item
+                android:title = "$"
+                app:actionLayout = "@layout/widget_check"
+                android:id="@+id/filter_menu_cheap"
+
+                />
+
+            <item
+                    android:title = "$$"
+                    app:actionLayout = "@layout/widget_check"
+                    android:id="@+id/filter_menu_medium"
+            />
+
+            <item
+                    android:title = "$$$"
+                    app:actionLayout = "@layout/widget_check"
+                    android:id="@+id/filter_menu_expensive"
+
+            />
+
+            <item
+                    android:title="Filter"
+                app:actionLayout = "@layout/widget_button"
+                android:id = "@+id/filter_menu_button"
+                />
+
+
+
+        </menu>
+    </item>
+</menu>

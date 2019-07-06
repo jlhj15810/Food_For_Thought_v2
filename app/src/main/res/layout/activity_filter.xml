@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:ndroid="http://schemas.android.com/apk/res-auto"
+        tools:context=".filter">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <CheckBox
+            android:text="Halal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/halal_filter_activity"
+            ndroid:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" ndroid:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" ndroid:layout_constraintHorizontal_bias="0.383"
+            android:layout_marginBottom="8dp" ndroid:layout_constraintBottom_toTopOf="@+id/checkBox6"
+            ndroid:layout_constraintTop_toTopOf="parent" ndroid:layout_constraintVertical_bias="0.591"/>
+    <CheckBox
+            android:text="$"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox2"
+            ndroid:layout_constraintEnd_toStartOf="@+id/checkBox6" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            ndroid:layout_constraintHorizontal_bias="0.084" android:layout_marginTop="12dp"
+            ndroid:layout_constraintTop_toBottomOf="@+id/textView4" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toTopOf="@+id/checkBox7" ndroid:layout_constraintVertical_bias="0.78"/>
+    <CheckBox
+            android:text="Vegetarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox3"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            ndroid:layout_constraintEnd_toStartOf="@+id/checkBox5" android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" ndroid:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:layout_marginBottom="8dp" ndroid:layout_constraintBottom_toTopOf="@+id/checkBox4"
+            ndroid:layout_constraintHorizontal_bias="0.173" ndroid:layout_constraintVertical_bias="0.55"/>
+    <CheckBox
+            android:text="Beef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox4"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
+            ndroid:layout_constraintEnd_toStartOf="@+id/checkBox" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintHorizontal_bias="0.074" android:layout_marginTop="8dp"
+            ndroid:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toTopOf="@+id/textView4" ndroid:layout_constraintVertical_bias="0.912"/>
+    <CheckBox
+            android:text="CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox5"
+            ndroid:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            ndroid:layout_constraintHorizontal_bias="0.424"
+            android:layout_marginTop="68dp" ndroid:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="33dp" ndroid:layout_constraintBottom_toTopOf="@+id/checkBox"/>
+    <Button
+            android:text="Filter!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/filter_button_1" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            ndroid:layout_constraintTop_toTopOf="parent" ndroid:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" ndroid:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"/>
+    <TextView
+            android:text="Sort By Food Type:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" ndroid:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" ndroid:layout_constraintTop_toTopOf="parent"
+            ndroid:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toBottomOf="parent" ndroid:layout_constraintVertical_bias="0.011"/>
+
+    <TextView
+            android:text="Sort By Price:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4" ndroid:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" ndroid:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp" ndroid:layout_constraintBottom_toTopOf="@+id/filter_button_1"
+            ndroid:layout_constraintHorizontal_bias="0.009" ndroid:layout_constraintVertical_bias="0.576"/>
+    <CheckBox
+            android:text="$$"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox6" ndroid:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            ndroid:layout_constraintHorizontal_bias="0.412" android:layout_marginTop="8dp"
+            ndroid:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toTopOf="@+id/filter_button_1"
+            ndroid:layout_constraintVertical_bias="0.874"/>
+    <CheckBox
+            android:text="$$$"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox7" ndroid:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            ndroid:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            ndroid:layout_constraintHorizontal_bias="0.008" android:layout_marginBottom="8dp"
+            ndroid:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            ndroid:layout_constraintTop_toBottomOf="@+id/textView4" ndroid:layout_constraintVertical_bias="0.224"/>
+
+</android.support.constraint.ConstraintLayout>
