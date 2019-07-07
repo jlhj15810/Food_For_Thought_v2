@@ -36,7 +36,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         this.mData = mData;
     }
 
-    //HAHAHHA
+    //Testing 12345
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
