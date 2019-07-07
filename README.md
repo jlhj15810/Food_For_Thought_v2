@@ -10,4 +10,3 @@ Integrated
 4) Adding and giving ratings/comments
 5) Google maps integration
 
-Food_For_Thought_v2
