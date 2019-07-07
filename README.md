@@ -1,7 +1,7 @@
 # Food_For_Thought_v2
 
 Restaurant finder application within NUS campus.
-For Orbital 2019 Gemmini Level
+For Orbital 2019 Gemini Level
 
 Integrated
 1) Facebook Login and share
