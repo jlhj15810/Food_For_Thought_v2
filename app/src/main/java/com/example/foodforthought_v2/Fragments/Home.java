@@ -32,6 +32,7 @@ public class Home extends Fragment {
     SearchView searchView;
     ImageView filter_button_dropdowns;
 
+
     static String[] food_choices = {"Halal", "Vegetarian", "No Beef", "$", "$$", "$$$", "Original"};
     AlertDialog alertDialog;
     List<String> selectedItemList = new ArrayList<>();
@@ -144,19 +145,22 @@ public class Home extends Fragment {
                             else {
 
 
-                                for (String s : selectedItemList) {
+
                                     for (Post post : postList) {
-                                        if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || post.getPrice().equals(s)) {
-                                            testing_posts.add(post);
+
+                                        for (String s : selectedItemList) {
+                                            if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || (post.getPrice().equals(s))) {
+                                                testing_posts.add(post);
+                                            }
                                         }
                                     }
-                                }
+
 
 
                                 List<Post> removed_duplicates = new ArrayList<>();
 
                                 for (Post p : testing_posts) {
-                                    if (!removed_duplicates.contains(p)) {
+                                    if (!(removed_duplicates.contains(p))) {
                                         removed_duplicates.add(p);
                                     }
                                 }
