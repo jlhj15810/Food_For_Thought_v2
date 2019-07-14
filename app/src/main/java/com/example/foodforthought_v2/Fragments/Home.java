@@ -173,14 +173,10 @@ public class Home extends Fragment {
 
                                     //Array2
                                 List<Post> removed_duplicates = new ArrayList<>();
+                                List<Post> removed_duplicates_plus_no_dollar = new ArrayList<>();
 
                                 for (Post p : testing_posts) {
 
-
-                                    //If the price is equal to "$"
-                                    if(p.getPrice().equals("$")) {
-
-                                    }
 
                                     if (!(removed_duplicates.contains(p))) {
 
@@ -190,7 +186,27 @@ public class Home extends Fragment {
                                 }
 
 
-                                PostAdapter postAdapter = new PostAdapter(getActivity(), removed_duplicates);
+                                for(Post k : removed_duplicates) {
+
+
+                                    if(selectedItemList.contains("$")) {
+                                        if(k.getPrice().equals("$")) {
+                                            removed_duplicates_plus_no_dollar.add(k);
+                                        }
+                                    } else if (selectedItemList.contains("$$")) {
+                                        if(k.getPrice().equals("$$")) {
+                                            removed_duplicates_plus_no_dollar.add(k);
+                                        }
+                                    } else if (selectedItemList.contains("$$$")) {
+                                        if(k.getPrice().equals("$$$")) {
+                                            removed_duplicates_plus_no_dollar.add(k);
+                                        }
+                                    }
+                                }
+
+
+
+                                PostAdapter postAdapter = new PostAdapter(getActivity(), removed_duplicates_plus_no_dollar);
                                 postRecyclerView.setAdapter(postAdapter);
 
                             }
