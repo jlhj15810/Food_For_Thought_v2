@@ -148,28 +148,43 @@ public class Home extends Fragment {
                             else {
 
 
-                                //Added stringbuilder support to show the textviews
+                                //Added stringbuilder support to show the textviews for debugging purposes.
+                                // Not necessary.
                                 final StringBuilder builders = new StringBuilder();
 
                                     for (Post post : postList) {
 
+
+                                        // For the first string s, we add the "$"
+                                        // Then the second string s, we check the "Halal" portion.
                                         for (String s : selectedItemList) {
 
-                                            builders.append(s + "\n");
-                                            if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || (post.getPrice().equals(s))) {
-                                                testing_posts.add(post);
+
+                                            if (post.getCategory().toLowerCase().contains(s.toLowerCase() ) || (post.getPrice().equals(s))) {
+                                                    testing_posts.add(post);
                                             }
                                         }
 
+                                        // Set the text for the various textViews.
                                         textView.setText(builders.toString());
                                     }
 
 
 
+                                    //Array2
                                 List<Post> removed_duplicates = new ArrayList<>();
 
                                 for (Post p : testing_posts) {
+
+
+                                    //If the price is equal to "$"
+                                    if(p.getPrice().equals("$")) {
+
+                                    }
+
                                     if (!(removed_duplicates.contains(p))) {
+
+
                                         removed_duplicates.add(p);
                                     }
                                 }
@@ -178,36 +193,8 @@ public class Home extends Fragment {
                                 PostAdapter postAdapter = new PostAdapter(getActivity(), removed_duplicates);
                                 postRecyclerView.setAdapter(postAdapter);
 
-//
-//                            for(Post post : postList) {
-//                                if(post.getCategory().toLowerCase().contains())
-//                            }
                             }
                         }
-//                        List<Post> testing_posts = new ArrayList<>();
-//
-//                        if(selectedItemList.size() > 1) {
-//
-//                        }
-//
-//
-//                        for (Post post : postList) {
-//
-//                            //If our description contains the search field we are interested in,
-//
-//                            if (post.getDescription().toLowerCase().contains(s.toLowerCase()) || post.getCategory().toLowerCase().contains(s.toLowerCase())
-//                                    || post.getPrice().equals(s)) {
-//                                list.add(post);
-//                            }
-//
-//                        }
-//
-//
-//                        for(String s :selectedItemList) {
-//                            search(s);
-//                        }
-
-                      //  search(selectedItemList.get(0));
 
                     }
                 })

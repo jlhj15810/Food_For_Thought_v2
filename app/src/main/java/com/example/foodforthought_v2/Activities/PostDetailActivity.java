@@ -56,6 +56,8 @@ public class PostDetailActivity extends AppCompatActivity {
     ImageView open_to_google_maps_button;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
