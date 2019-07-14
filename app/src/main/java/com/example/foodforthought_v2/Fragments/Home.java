@@ -33,6 +33,7 @@ public class Home extends Fragment {
     ImageView filter_button_dropdowns;
 
 
+
     static String[] food_choices = {"Halal", "Vegetarian", "No Beef", "$", "$$", "$$$", "Original"};
     AlertDialog alertDialog;
     List<String> selectedItemList = new ArrayList<>();
@@ -88,6 +89,8 @@ public class Home extends Fragment {
         //Change back to Restaurants later
         databaseReference = firebaseDatabase.getReference("Restaurant2");
         searchView = fragmentView.findViewById(R.id.searchView);
+
+
 
         textView = fragmentView.findViewById(R.id.home_textview);
 
@@ -145,14 +148,20 @@ public class Home extends Fragment {
                             else {
 
 
+                                //Added stringbuilder support to show the textviews
+                                final StringBuilder builders = new StringBuilder();
 
                                     for (Post post : postList) {
 
                                         for (String s : selectedItemList) {
+
+                                            builders.append(s + "\n");
                                             if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || (post.getPrice().equals(s))) {
                                                 testing_posts.add(post);
                                             }
                                         }
+
+                                        textView.setText(builders.toString());
                                     }
 
 
