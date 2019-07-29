@@ -48,7 +48,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
 
         myViewHolder.tvTitle.setText(mData.get(i).getTitle());
-        myViewHolder.tvDescription.setText(mData.get(i).getDescription());
+        myViewHolder.tvDescription.setText(mData.get(i).getDisplayCategory());
         myViewHolder.tvPrice.setText(mData.get(i).getPrice());
         Glide.with(mContext).load(mData.get(i).getPicture()).into(myViewHolder.imagePost);
 
@@ -89,7 +89,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     postDetailActivity.putExtra("title", mData.get(position).getTitle());
                     postDetailActivity.putExtra("picture", mData.get(position).getPicture());
                     postDetailActivity.putExtra("price", mData.get(position).getPrice());
-                    postDetailActivity.putExtra("description", mData.get(position).getDescription());
+                    postDetailActivity.putExtra("description", mData.get(position).getDisplayCategory());
                     postDetailActivity.putExtra("postKey", mData.get(position).getPostKey());
                     postDetailActivity.putExtra("category", mData.get(position).getCategory());
                     postDetailActivity.putExtra("location", mData.get(position).getLocation());

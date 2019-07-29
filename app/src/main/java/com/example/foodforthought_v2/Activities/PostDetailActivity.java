@@ -122,7 +122,11 @@ public class PostDetailActivity extends AppCompatActivity {
         textPostDescription.setText(postDescription);
 
         String postCategory = getIntent().getExtras().getString("category");
-        textCategory.setText("Category: " + postCategory);
+        if (postCategory.equals(" ")){
+            textCategory.setText("Category: No Restrictions");
+        } else {
+            textCategory.setText("Category: " + postCategory);
+        }
 
         postLocation = getIntent().getExtras().getString("location");
 

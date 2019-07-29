@@ -114,6 +114,7 @@ public class Add_New_Restaurant extends Fragment {
                                             (int)comment.getRatings(),
                                             //Default category and location, change if necessary to do so
                                             "Hello",
+                                            "Hello Hello",
                                             "Bye"
 
                                     );
