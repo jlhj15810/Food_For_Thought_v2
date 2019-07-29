@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Navigation drawer, dont touch-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:background = "@color/colorAccent"
-    android:padding = "16dp"
-    android:theme = "@style/ThemeOverlay.AppCompat.Light">
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/red1"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Light">
 
     <ImageView
+        android:id="@+id/navigation_bar_pic"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src = "@mipmap/ic_launcher_round"
-        android:paddingTop = "20dp"
-        android:id="@+id/navigation_bar_pic"
+        android:paddingTop="20dp"
         android:scaleType="fitXY"
-       />
+        android:src="@drawable/loginhuman_nowords" />
 
     <TextView
+        android:id="@+id/navigation_bar_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop = "10dp"
-        android:text = "Guest"
+        android:paddingTop="10dp"
+        android:text="Guest"
+        android:textColor="@color/yellow1"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:id="@+id/navigation_bar_profile_name"/>
+        android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/navigation_bar_email_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guest@hotmail.com"
-        android:id="@+id/navigation_bar_email_address"/>
+        android:text="No email registered"
+        android:textColor="@color/yellow1" />
 
 </LinearLayout>

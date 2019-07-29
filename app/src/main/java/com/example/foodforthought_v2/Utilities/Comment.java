@@ -75,29 +75,29 @@ public class Comment {
 
         //This shit need to think again,
 
-         if ((this.ratings >0 && this.ratings <0.5) || this.ratings <0) {
+        if ((this.ratings >0 && this.ratings <0.5) || this.ratings <0) {
             return  0;
         } else if (this.ratings >=0.5 && this.ratings <1) {
             return (float) 0.5;
         } else if (this.ratings >=1 && this.ratings <1.5) {
-             return (float) 1;
-         } else if (this.ratings >=1.5 && this.ratings <2) {
-             return (float) 1.5;
-         } else if (this.ratings >=2 && this.ratings <2.5) {
-             return (float) 2.0;
-         } else if (this.ratings >=2.5 && this.ratings <3) {
-             return (float) 2.5;
-         } else if (this.ratings >=3 && this.ratings <3.5) {
-             return (float) 3.0;
-         } else if (this.ratings >=3.5 && this.ratings <4) {
-             return (float) 3.5;
-         } else if (this.ratings >=4 && this.ratings <4.5) {
-             return (float) 4.0;
-         } else if (this.ratings >=4.5 && this.ratings <5) {
-             return (float) 4.5;
-         } else {
-             return (float) 5;
-         }
+            return (float) 1;
+        } else if (this.ratings >=1.5 && this.ratings <2) {
+            return (float) 1.5;
+        } else if (this.ratings >=2 && this.ratings <2.5) {
+            return (float) 2.0;
+        } else if (this.ratings >=2.5 && this.ratings <3) {
+            return (float) 2.5;
+        } else if (this.ratings >=3 && this.ratings <3.5) {
+            return (float) 3.0;
+        } else if (this.ratings >=3.5 && this.ratings <4) {
+            return (float) 3.5;
+        } else if (this.ratings >=4 && this.ratings <4.5) {
+            return (float) 4.0;
+        } else if (this.ratings >=4.5 && this.ratings <5) {
+            return (float) 4.5;
+        } else {
+            return (float) 5;
+        }
     }
 
     public void setRatings(float ratings) {

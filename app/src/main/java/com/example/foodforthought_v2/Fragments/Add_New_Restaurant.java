@@ -89,7 +89,7 @@ public class Add_New_Restaurant extends Fragment {
                 //We need to test all input fields (Title and description) and post image
 
                 if(!popupTitle.getText().toString().isEmpty() && !popupDescription.toString().isEmpty()
-                && pickedImguri != null) {
+                        && pickedImguri != null) {
 
                     //Everything is okay, no empty fields
                     //TODO Create the restaurant object and add it into Firebase database
