@@ -33,7 +33,6 @@ public class Home extends Fragment {
     ImageView filter_button_dropdowns;
 
 
-
     static String[] food_choices = {"Halal", "Vegetarian", "No Beef", "$", "$$", "$$$", "Original"};
     AlertDialog alertDialog;
     List<String> selectedItemList = new ArrayList<>();
@@ -42,8 +41,6 @@ public class Home extends Fragment {
 
     TextView textView;
     String a = "";
-
-
 
 
     @Override
@@ -91,7 +88,6 @@ public class Home extends Fragment {
         searchView = fragmentView.findViewById(R.id.searchView);
 
 
-
         textView = fragmentView.findViewById(R.id.home_textview);
 
         //For the dialog instead of the navigation bar
@@ -116,7 +112,7 @@ public class Home extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
-                if(isChecked) {
+                if (isChecked) {
                     selectedItemList.add(food_choices[which]);
                 } else {
                     selectedItemList.remove(food_choices[which]);
@@ -130,11 +126,9 @@ public class Home extends Fragment {
 
                         List<Post> testing_posts = new ArrayList<>();
 
-                        if(selectedItemList.size() == 0) {
+                        if (selectedItemList.size() == 0) {
                             search(" ");
-                        }
-
-                        else {
+                        } else {
 
                             if (selectedItemList.get(0) == "Original") {
                                 search(" ");
@@ -152,58 +146,55 @@ public class Home extends Fragment {
                                 // Not necessary.
                                 final StringBuilder builders = new StringBuilder();
 
-                                    for (Post post : postList) {
+                                for (Post post : postList) {
 
 
-                                        // For the first string s, we add the "$"
-                                        // Then the second string s, we check the "Halal" portion.
-                                        for (String s : selectedItemList) {
+                                    // For the first string s, we add the "$"
+                                    // Then the second string s, we check the "Halal" portion.
+                                    for (String s : selectedItemList) {
 
 
-                                            if (post.getCategory().toLowerCase().contains(s.toLowerCase() ) || (post.getPrice().equals(s))) {
-                                                    testing_posts.add(post);
-                                            }
+                                        if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || (post.getPrice().equals(s))) {
+                                            testing_posts.add(post);
                                         }
-
-                                        // Set the text for the various textViews.
-                                        textView.setText(builders.toString());
                                     }
 
+                                    // Set the text for the various textViews.
+                                    textView.setText(builders.toString());
+                                }
 
 
-                                    //Array2
+                                //Array2
                                 List<Post> removed_duplicates = new ArrayList<>();
                                 List<Post> removed_duplicates_plus_no_dollar = new ArrayList<>();
 
                                 for (Post p : testing_posts) {
 
 
+                                    // If the list contains P, then we dont add them
+                                    // If the list dont contain P, we add them
                                     if (!(removed_duplicates.contains(p))) {
-
-
                                         removed_duplicates.add(p);
                                     }
                                 }
 
 
-                                for(Post k : removed_duplicates) {
+                                for (Post k : removed_duplicates) {
 
-
-                                    if(selectedItemList.contains("$")) {
-                                        if(k.getPrice().equals("$")) {
+                                    if (selectedItemList.contains("$")) {
+                                        if (k.getPrice().equals("$")) {
                                             removed_duplicates_plus_no_dollar.add(k);
                                         }
                                     } else if (selectedItemList.contains("$$")) {
-                                        if(k.getPrice().equals("$$")) {
+                                        if (k.getPrice().equals("$$")) {
                                             removed_duplicates_plus_no_dollar.add(k);
                                         }
                                     } else if (selectedItemList.contains("$$$")) {
-                                        if(k.getPrice().equals("$$$")) {
+                                        if (k.getPrice().equals("$$$")) {
                                             removed_duplicates_plus_no_dollar.add(k);
                                         }
                                     }
                                 }
-
 
 
                                 PostAdapter postAdapter = new PostAdapter(getActivity(), removed_duplicates_plus_no_dollar);
@@ -220,7 +211,7 @@ public class Home extends Fragment {
 
                     }
                 });
-        alertDialog= builder.create();
+        alertDialog = builder.create();
 
         return fragmentView;
 
@@ -278,7 +269,6 @@ public class Home extends Fragment {
 
 
     }
-
 
 
     public void search(String s) {
