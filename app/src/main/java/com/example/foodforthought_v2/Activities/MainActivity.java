@@ -9,7 +9,7 @@ import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
 //The page which holds the main page which "Finds some food"
-
+//test123
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
