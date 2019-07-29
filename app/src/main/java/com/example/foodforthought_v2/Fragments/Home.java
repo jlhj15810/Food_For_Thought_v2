@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Random;
 
 //Our Home Page, the page which shows a lot of our things
-//TEsting123
 
 public class Home extends Fragment {
 
