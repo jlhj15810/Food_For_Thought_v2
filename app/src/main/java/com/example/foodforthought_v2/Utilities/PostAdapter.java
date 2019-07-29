@@ -89,7 +89,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     postDetailActivity.putExtra("title", mData.get(position).getTitle());
                     postDetailActivity.putExtra("picture", mData.get(position).getPicture());
                     postDetailActivity.putExtra("price", mData.get(position).getPrice());
-                    postDetailActivity.putExtra("description", mData.get(position).getDisplayCategory());
+                    postDetailActivity.putExtra("description", mData.get(position).getDescription());
                     postDetailActivity.putExtra("postKey", mData.get(position).getPostKey());
                     postDetailActivity.putExtra("category", mData.get(position).getCategory());
                     postDetailActivity.putExtra("location", mData.get(position).getLocation());
