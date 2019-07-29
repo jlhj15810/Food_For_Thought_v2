@@ -50,7 +50,6 @@ public class Home extends Fragment {
     boolean isRandom;
 
 
-
     //Can delete if you want
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -120,7 +119,7 @@ public class Home extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
-                if(isChecked) {
+                if (isChecked) {
                     selectedItemList.add(food_choices[which]);
                 } else {
                     selectedItemList.remove(food_choices[which]);
@@ -136,8 +135,8 @@ public class Home extends Fragment {
                         List<Post> testing_posts2 = new ArrayList<>();
                         List<Post> testing_posts_final = new ArrayList<>();
 
-                        for (String item : selectedItemList){
-                            if (item.equals("Random Food Choice")){
+                        for (String item : selectedItemList) {
+                            if (item.equals("Random Food Choice")) {
                                 System.out.println("RFC ENGAGED");
                                 isRandom = true;
                                 break;
@@ -145,7 +144,7 @@ public class Home extends Fragment {
                         }
 
                         //So resets the recyclerview
-                        if(selectedItemList.size() == 0) {
+                        if (selectedItemList.size() == 0) {
                             System.out.println("HERE 1");
                             displayAllRestaurant();
                         }
@@ -173,7 +172,7 @@ public class Home extends Fragment {
                                 boolean isCatHasWords = false;
                                 boolean isCatMoney = false;
                                 for (String cat : selectedItemList) {
-                                    if (category.contains(cat)){
+                                    if (category.contains(cat)) {
                                         isCatHasWords = true;
                                     } else {
                                         isCatMoney = true;
@@ -198,7 +197,7 @@ public class Home extends Fragment {
                                             }
                                         }
                                     }
-                                } else if (isCatHasWords && !isCatMoney){
+                                } else if (isCatHasWords && !isCatMoney) {
                                     System.out.println("HERE 6");
 
                                     for (Post post : postList) {
@@ -210,7 +209,7 @@ public class Home extends Fragment {
                                     }
 
 
-                                }else {
+                                } else {
                                     System.out.println("HERE 7");
 
                                     for (Post post : postList) {
@@ -223,24 +222,11 @@ public class Home extends Fragment {
                                 }
 
 
-                                if (isRandom){
+                                if (isRandom) {
                                     getRandomChoice(testing_posts2);
                                     isRandom = false;
                                 }
 
-
-
-
-
-//                                for (String s : selectedItemList) {
-//
-//                                    //Consists of the restaurant you see on the mainpage
-//                                    for (Post post : postList) {
-//                                        if (post.getCategory().toLowerCase().contains(s.toLowerCase()) || post.getPrice().equals(s)) {
-//                                            testing_posts.add(post);
-//                                        }
-//                                    }
-//                                }
 
                                 //List of post which contains all the non-duplicates
                                 List<Post> removed_duplicates = new ArrayList<>();
@@ -258,36 +244,9 @@ public class Home extends Fragment {
                                 PostAdapter postAdapter = new PostAdapter(getActivity(), removed_duplicates);
                                 postRecyclerView.setAdapter(postAdapter);
 
-//
-//                            for(Post post : postList) {
-//                                if(post.getCategory().toLowerCase().contains())
-//                            }
                             }
                         }
-//                        List<Post> testing_posts = new ArrayList<>();
-//
-//                        if(selectedItemList.size() > 1) {
-//
-//                        }
-//
-//
-//                        for (Post post : postList) {
-//
-//                            //If our description contains the search field we are interested in,
-//
-//                            if (post.getDescription().toLowerCase().contains(s.toLowerCase()) || post.getCategory().toLowerCase().contains(s.toLowerCase())
-//                                    || post.getPrice().equals(s)) {
-//                                list.add(post);
-//                            }
-//
-//                        }
-//
-//
-//                        for(String s :selectedItemList) {
-//                            search(s);
-//                        }
 
-                        //  search(selectedItemList.get(0));
 
                     }
                 })
@@ -359,7 +318,6 @@ public class Home extends Fragment {
     }
 
 
-
     public void search(String s) {
         List<Post> list = new ArrayList<>();
 
@@ -384,22 +342,22 @@ public class Home extends Fragment {
 
     }
 
-    public void displayAllRestaurant () {
+    public void displayAllRestaurant() {
         List<Post> list = new ArrayList<>();
 
         //Postlist contains all the restaurants in the database
         for (Post post : postList) {
-                list.add(post);
-            }
+            list.add(post);
+        }
         //Set the recycler view to show the results of the search.
         PostAdapter postAdapter = new PostAdapter(getActivity(), list);
         postRecyclerView.setAdapter(postAdapter);
 
     }
 
-    public void getRandomChoice (){
+    public void getRandomChoice() {
         System.out.println("GET RANDOM CHOICE 1");
-        List <Post> list = new ArrayList<>();
+        List<Post> list = new ArrayList<>();
         Random rand = new Random();
         int randomElementPost = rand.nextInt(postList.size());
         list.add(postList.get(randomElementPost));
@@ -408,10 +366,10 @@ public class Home extends Fragment {
 
     }
 
-    public void getRandomChoice (List <Post> testing_posts2){
+    public void getRandomChoice(List<Post> testing_posts2) {
         System.out.println("GET RANDOM CHOICE 2");
         System.out.println("TESTING POST 2 SIZE ERROR : " + testing_posts2.size());
-        List <Post> list = new ArrayList<>();
+        List<Post> list = new ArrayList<>();
         Random rand = new Random();
         int randomElementPost = rand.nextInt(testing_posts2.size());
         Post randPost = testing_posts2.get(randomElementPost);
@@ -420,16 +378,3 @@ public class Home extends Fragment {
         System.out.println("1 TESTING POST 2 SIZE: " + testing_posts2.size());
     }
 }
-
-//
-//    Post randomElementPost;
-//                                for (String item : selectedItemList) {
-//                                        if (item.equals("Random Food Choice")) {
-//                                        Random rand = new Random();
-//                                        System.out.println("TEST: " + testing_posts2.size());
-//                                        int randomElement = rand.nextInt(testing_posts2.size());
-//                                        randomElementPost = testing_posts2.get(randomElement);
-//                                        testing_posts2.clear();
-//                                        testing_posts2.add(randomElementPost);
-//                                        }
-//                                        }

@@ -15,6 +15,7 @@ public class MultipleChoiceDialogFragment extends DialogFragment {
 
     public interface onMultiChoiceListener {
         void onPostiveButtonClicked(String[] list, ArrayList<String> selectedItemList);
+
         void onNegativeButtonClicked();
     }
 
@@ -25,7 +26,7 @@ public class MultipleChoiceDialogFragment extends DialogFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        try{
+        try {
             mListener = (onMultiChoiceListener) context;
         } catch (Exception e) {
             throw new ClassCastException(getActivity().toString() + " onMultiChoiceListener must be implemented");
@@ -45,7 +46,7 @@ public class MultipleChoiceDialogFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
-                if(isChecked) {
+                if (isChecked) {
                     selectedItemList.add(list[which]);
                 } else {
                     selectedItemList.remove(list[which]);

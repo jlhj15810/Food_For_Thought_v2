@@ -53,13 +53,11 @@ public class Real_Home_Main extends AppCompatActivity implements
     Dialog popAddPost;
 
 
-
     private DrawerLayout drawerLayout;
 
     public interface Listener23 {
         void onInputASent(CharSequence input);
     }
-
 
 
     @Override
@@ -85,13 +83,11 @@ public class Real_Home_Main extends AppCompatActivity implements
         initPopup();
 
 
-
         drawerLayout = findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
         final NavigationView slider = findViewById(R.id.filter_menu);
         MenuItem halal = slider.getMenu().findItem(R.id.filter_menu_halal);
         final CompoundButton switca = (CompoundButton) MenuItemCompat.getActionView(halal);
-
 
 
         switca.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +96,7 @@ public class Real_Home_Main extends AppCompatActivity implements
                 boolean checky = switca.isChecked();
 
                 //Means that the checbox is checked,
-                if(checky) {
+                if (checky) {
                     CharSequence input = switca.getText();
 
                     Bundle bundle = new Bundle();
@@ -165,8 +161,6 @@ public class Real_Home_Main extends AppCompatActivity implements
         navigationView.setCheckedItem(R.id.nav_home);
 
     }
-
-
 
 
     //Set up the popup to add our stuff in the database
@@ -279,7 +273,6 @@ public class Real_Home_Main extends AppCompatActivity implements
         super.onStart();
 
     }
-
 
 
 //    //To check if we need. Not important, good to have only

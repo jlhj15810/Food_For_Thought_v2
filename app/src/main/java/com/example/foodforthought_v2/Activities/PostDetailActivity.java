@@ -39,6 +39,7 @@ public class PostDetailActivity extends AppCompatActivity {
     Button buttonAddComment;
     String PostKey, postLocation;
     RatingBar ratingBar;
+    TextView giveRatingText;
 
 
     ImageView share_to_facebook_picture;
@@ -53,7 +54,6 @@ public class PostDetailActivity extends AppCompatActivity {
     RecyclerView RvComment;
     CommentAdapter commentAdapter;
     List<Comment> commentList;
-    List<Comment> reverseCommentList;
 
     ImageView open_to_google_maps_button;
 
@@ -63,14 +63,8 @@ public class PostDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        //To set the status bar to transparent
-//        Window w = getWindow();
-//        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-//        getSupportActionBar().hide();
-
 
         // Initialise the view
-
 
 
         RvComment = findViewById(R.id.rv_comment);
@@ -87,6 +81,7 @@ public class PostDetailActivity extends AppCompatActivity {
         buttonAddComment = findViewById(R.id.post_detail_add_comment_btn);
 
         ratingBar = findViewById(R.id.post_detail_ratingBar);
+        giveRatingText = findViewById(R.id.textView2);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -133,7 +128,23 @@ public class PostDetailActivity extends AppCompatActivity {
 
 
         //Set comment users image
-        Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imageCurrentUser);
+
+        // If there is no user who logs on,
+        if(firebaseUser == null){
+            Glide.with(this).load(R.drawable.ic_profile).into(imageCurrentUser);
+            ratingBar.setVisibility(View.GONE);
+            buttonAddComment.setVisibility(View.GONE);
+            imageCurrentUser.setVisibility(View.GONE);
+            giveRatingText.setVisibility(View.GONE);
+            editTextComment.setVisibility(View.GONE);
+
+
+
+        }
+        else {
+            Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imageCurrentUser);
+
+        }
 
         // To get the secure post ID
         PostKey = getIntent().getExtras().getString("postKey");
@@ -199,7 +210,7 @@ public class PostDetailActivity extends AppCompatActivity {
                 float ratings = ratingBar.getRating();
 
 
-                Comment comment = new Comment(comment_content,uid,uimage,uname, ratings);
+                Comment comment = new Comment(comment_content, uid, uimage, uname, ratings);
 
                 commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

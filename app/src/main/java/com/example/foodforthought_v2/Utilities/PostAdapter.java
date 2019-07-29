@@ -40,7 +40,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View row = LayoutInflater.from(mContext).inflate(R.layout.row_post_item,viewGroup,false);
+        View row = LayoutInflater.from(mContext).inflate(R.layout.row_post_item, viewGroup, false);
         return new MyViewHolder(row);
     }
 
@@ -87,15 +87,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     int position = getAdapterPosition();
 
                     postDetailActivity.putExtra("title", mData.get(position).getTitle());
-                    postDetailActivity.putExtra("picture",mData.get(position).getPicture());
+                    postDetailActivity.putExtra("picture", mData.get(position).getPicture());
                     postDetailActivity.putExtra("price", mData.get(position).getPrice());
                     postDetailActivity.putExtra("description", mData.get(position).getDescription());
                     postDetailActivity.putExtra("postKey", mData.get(position).getPostKey());
                     postDetailActivity.putExtra("category", mData.get(position).getCategory());
                     postDetailActivity.putExtra("location", mData.get(position).getLocation());
-
-
-
 
 
                     //long timestamp = (long) mData.get(position).getTimeStamp();
