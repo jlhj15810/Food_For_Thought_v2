@@ -17,13 +17,12 @@ public class Post {
     private int ratingBar_post;
 
     private String category;
+    private String displayCategory;
     private String location;
 
 
 
-
-
-    public Post(String title, String description, String price, String picture, int ratingBar_post, String category, String location ) {
+    public Post(String title, String description, String price, String picture, int ratingBar_post, String category, String displayCategory, String location ) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -31,6 +30,7 @@ public class Post {
         this.timeStamp = ServerValue.TIMESTAMP;
         this.ratingBar_post = ratingBar_post;
         this.category = category;
+        this.displayCategory = displayCategory;
         this.location = location;
     }
 
@@ -109,5 +109,13 @@ public class Post {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getDisplayCategory() {
+        return displayCategory;
+    }
+
+    public void setDisplayCategory(String displayCategory) {
+        this.displayCategory = displayCategory;
     }
 }
