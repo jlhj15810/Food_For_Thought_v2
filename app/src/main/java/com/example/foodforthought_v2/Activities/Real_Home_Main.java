@@ -113,7 +113,7 @@ public class Real_Home_Main extends AppCompatActivity implements
                 }
 
 
-             //   Toast.makeText(getApplicationContext(),switca.getText().toString(), Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(getApplicationContext(),switca.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -269,7 +269,7 @@ public class Real_Home_Main extends AppCompatActivity implements
 
         navEmail.setText(generic_nav_user_name);
         navUserName.setText(generic_nav_email_address);
-        navDisplayPicture.setImageResource(R.mipmap.ic_launcher_round);
+        navDisplayPicture.setImageResource(R.drawable.loginhuman_nowords);
 
     }
 

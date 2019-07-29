@@ -36,7 +36,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         this.mData = mData;
     }
 
-    //Testing 12345
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -79,6 +78,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             tvDescription = itemView.findViewById(R.id.row_post_description);
             tvPrice = itemView.findViewById(R.id.row_post_price);
             tvRatingBar = itemView.findViewById(R.id.post_detail_ratingBar);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

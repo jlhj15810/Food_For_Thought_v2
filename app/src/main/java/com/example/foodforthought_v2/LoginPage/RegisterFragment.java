@@ -53,7 +53,7 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        getActivity().setTitle("Registration");
 
         //User's Email
         userEmail = view.findViewById(R.id.login_email);
@@ -87,13 +87,16 @@ public class RegisterFragment extends Fragment {
                     //If user never input correctly or something goes wrong and we need to display an error
                     showMessage("Please Verify all fields");
                     loadingProgress.setVisibility(View.INVISIBLE);
-                } else {
-
+                    registerButton.setVisibility(View.VISIBLE);
+                } else if (pickedImguri == null){
+                    showMessage("Please click on the imaage to upload a profile picture");
+                    loadingProgress.setVisibility(View.INVISIBLE);
+                    registerButton.setVisibility(View.VISIBLE);
+                }else {
                     //The guy is a good boy and never fuck it up
                     //So we create the account for him :)
 
                     CreateUserAccount(email, name, password);
-
                 }
 
             }

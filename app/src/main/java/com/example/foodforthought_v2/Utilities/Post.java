@@ -6,7 +6,6 @@ import com.google.firebase.database.ServerValue;
 //Used to store info about the user on firebase databse
 
 public class Post {
-
     private String postKey;
     private String title;
     private String description;
@@ -21,7 +20,7 @@ public class Post {
     private String location;
 
 
-    
+
 
 
     public Post(String title, String description, String price, String picture, int ratingBar_post, String category, String location ) {
@@ -33,8 +32,6 @@ public class Post {
         this.ratingBar_post = ratingBar_post;
         this.category = category;
         this.location = location;
-
-
     }
 
     public Post() {

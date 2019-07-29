@@ -26,6 +26,7 @@ import com.google.firebase.database.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -52,10 +53,9 @@ public class PostDetailActivity extends AppCompatActivity {
     RecyclerView RvComment;
     CommentAdapter commentAdapter;
     List<Comment> commentList;
+    List<Comment> reverseCommentList;
 
     ImageView open_to_google_maps_button;
-
-
 
 
     @Override
@@ -133,7 +133,6 @@ public class PostDetailActivity extends AppCompatActivity {
 
 
         //Set comment users image
-
         Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imageCurrentUser);
 
         // To get the secure post ID
@@ -198,6 +197,8 @@ public class PostDetailActivity extends AppCompatActivity {
                 String uname = firebaseUser.getDisplayName();
                 String uimage = firebaseUser.getPhotoUrl().toString();
                 float ratings = ratingBar.getRating();
+
+
                 Comment comment = new Comment(comment_content,uid,uimage,uname, ratings);
 
                 commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -237,6 +238,7 @@ public class PostDetailActivity extends AppCompatActivity {
                     commentList.add(commentss);
 
                 }
+                Collections.reverse(commentList);
 
                 commentAdapter = new CommentAdapter(getApplicationContext(), commentList);
                 RvComment.setAdapter(commentAdapter);
@@ -269,7 +271,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-      //  uri = data.getData();
+        //  uri = data.getData();
 
         super.onActivityResult(requestCode, resultCode, data);
     }

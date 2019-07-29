@@ -13,6 +13,7 @@ import android.widget.*;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.foodforthought_v2.Fragments.Home;
+import com.example.foodforthought_v2.Fragments.UserProfile_Fragment;
 import com.example.foodforthought_v2.R;
 import com.facebook.*;
 import com.facebook.login.LoginManager;
@@ -41,6 +42,8 @@ public class LoginFragment extends Fragment {
     public static final int MY_REQUEST_CODE = 7117;
     private LoginButton loginButton;
 
+    FirebaseUser currentUser2;
+    FirebaseAuth mAuth2;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -162,11 +165,13 @@ public class LoginFragment extends Fragment {
     }
 
     private void updateUI() {
+        mAuth2 = FirebaseAuth.getInstance();
+        currentUser2 = mAuth.getCurrentUser();
 
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, new Home());
         ft.commit();
-        showMessage("Welcome user :)");
+        showMessage("Welcome " + currentUser2.getDisplayName() + " :)");
         updateNavHeader();
     }
 

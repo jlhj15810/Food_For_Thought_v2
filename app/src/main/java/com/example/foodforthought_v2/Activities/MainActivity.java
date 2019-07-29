@@ -9,13 +9,14 @@ import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
 //The page which holds the main page which "Finds some food"
-//test123
+
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
     FirebaseAuth mAuth;
     LoginManager loginManager;
 
+    private Button trial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +29,35 @@ public class MainActivity extends AppCompatActivity {
                 openActivity3();
             }
         });
+
+//        trial = (Button) findViewById(R.id.buttonCreateAnAcc);
+//        trial.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openActivity4();
+//            }
+//        });
     }
 
 
     public void openActivity3() {
 
+        // To ensure that any users gets logged out.
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
         Intent intent = new Intent(this, Real_Home_Main.class);
         startActivity(intent);
     }
 
+
+//    public void openActivity4() {
+//
+//        // To ensure that any users gets logged out.
+//        FirebaseAuth.getInstance().signOut();
+//        LoginManager.getInstance().logOut();
+//        Intent intent = new Intent(this, Real_Home_Main_Updated.class);
+//        startActivity(intent);
+//    }
 
 
 

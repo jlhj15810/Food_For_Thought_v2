@@ -57,8 +57,8 @@ public class UserProfile_Fragment extends Fragment {
 
                 } else {
                     // show items in nav bar
-                   profile_name.setText("Welcome Guest");
-                   profile_email_address.setText("Guest@hotmail.com");
+                    profile_name.setText("Welcome Guest");
+                    profile_email_address.setText("Guest@hotmail.com");
                 }
             }
         });
